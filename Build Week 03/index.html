@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone - Homepage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside>
+        <div class="container-menu-navigazione-aside">
+            <div class="container-icone-aside">
+                <ion-icon name="home"></ion-icon>
+                <p>Home</p>
+            </div>
+
+            <div class="container-icone-aside">
+                <ion-icon name="search"></ion-icon>
+                <p>Cerca</p>
+            </div>
+
+            <div class="container-icone-aside">
+                <ion-icon name="library"></ion-icon>
+                <p>La tua libreria</p>
+            </div>
+
+            <div class="container-icone-aside primo-colonna">
+                <img src="icone/aggiungi.png" alt="Pulsante crea playlist">
+                <p>Crea playlist</p>
+            </div>
+
+            <div class="container-icone-aside">
+                <img src="icone/brani che ti piacciono.png" alt="Pulsante brani che ti piacciono">
+                <p>Brani che ti piacciono</p>
+            </div>
+
+            <div class="container-icone-aside">
+                <img src="icone/i tuoi episodi.png" alt="Pulsante i tuoi episodi">
+                <p>I tuoi episodi</p>
+            </div>
+        </div>
+        <div class="linea-divisore"></div>
+    </aside>
+
+    <main>
+        <div class="container-account">
+            <div class="container-foto-profilo">
+                <ion-icon name="person"></ion-icon>
+            </div>
+            <p id="nomeAccount">Nome Account</p>
+            <ion-icon name="caret-down"></ion-icon>
+        </div>
+
+        <div id="containerCaroselloHomePage"></div>
+    </main>
+
+    <aside></aside>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
