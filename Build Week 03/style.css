@@ -1,11 +1,36 @@
-body, html, p {
+/* FONT
+.outfit-<uniquifier> {
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+.roboto-regular {
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  font-style: normal;
+}*/
+
+body, html, p, h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
 }
 
 body {
     display: flex;
-    
+    font-family: "Outfit", serif;
 }
 /*MENU LATERALE SINISTRA*/
 aside {
@@ -57,13 +82,12 @@ main {
     flex-direction: column;
     background-color: #181818;
     flex-grow: 4;
-    justify-content: start;
-    align-items: end;
     padding: 10px 35px;
 }
 
 /*ACCOUNT _ PROFILO*/
-
+/*ACCOUNT _ PROFILO*/
+/*ACCOUNT _ PROFILO*/
 .container-account {
     display: flex;
     align-items: center;
@@ -74,6 +98,7 @@ main {
     width: fit-content;
     padding: 0px 9px;
     border-radius: 25pt;
+    align-self: self-end;
 }
 
 .container-foto-profilo {
@@ -90,5 +115,109 @@ main {
     font-size: 1.6em;
     color: #000000;
 }
-
 /*ACCOUNT _ PROFILO*/
+/*ACCOUNT _ PROFILO*/
+/*ACCOUNT _ PROFILO*/
+
+/*CAROSELLO - CAROSELLO*/
+/*CAROSELLO - CAROSELLO*/
+/*CAROSELLO - CAROSELLO*/
+#containerCaroselloHomePage {
+    display: flex;
+    background-color: #000000;
+    color: white;
+    justify-content: start;
+    padding: 10px;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.container-img-carosello-main {
+    width: 200px;
+}
+
+.container-img-carosello-main img {
+    width: 200px;
+    object-fit: cover;
+}
+
+.container-info-cta-carosello-main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.container-info-carosello-main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.titolo-brano {
+    font-size: 4em;
+}
+
+.container-cta-carosello-main {
+    display: flex;
+    gap: 20px;
+    align-items: center;  
+}
+
+.btn {
+    padding: 8px 18px;
+    border-radius: 25pt;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.play {
+    background-color: #1ed760;
+    color: #000000;
+}
+
+.salva {
+    background-color: #000000;
+    color: white;
+    border: 1px solid white;
+}
+
+.container-cta-carosello-main ion-icon {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #b2b2b2;
+}
+
+/*CAROSELLO - CAROSELLO*/
+/*CAROSELLO - CAROSELLO*/
+/*CAROSELLO - CAROSELLO*/
+
+.container-brani-con-like h2 {
+    color: white;
+}
+
+/*CARD PLAYLIST*/
+#containerRaccoltePersonalizzate {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.container-card-playlist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card-playlist {
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 12vw;
+}
+.card-playlist img {
+    width: 90px;
+}
