@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         containerCarosello.innerHTML = branoCaroselloHtml;
     }
 
-    function contenutiRaccoltePersonalizzate() {
+    function fetchPlaylist() {
         const urlPlaylist = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/playlists";
         fetch(urlPlaylist)
             .then((res) => res.json())
@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const playlist = jsonData.data;
                 console.log(playlist);
                 renderizzaContenutiRaccoltePersonalizzate(playlist);
+                renderizzaContenutiRaccolteConsigliate(playlist)
             })
             .catch((err) => console.log("Errore nel fetch playlist:", err));
     }
@@ -71,21 +72,55 @@ document.addEventListener("DOMContentLoaded", () => {
         containerRaccoltePersonalizzate.appendChild(h3RaccoltePersonalizzate);
         const containerCardPlaylist = document.createElement("div");
         containerCardPlaylist.classList.add("container-card-playlist"); // Aggiungi una classe per lo styling
-
+        let countCard= 0
         playlist.forEach(singolaRaccolta => {
+            if (countCard > 5) {
+                return
+            }
+
             const card = document.createElement("div");
             card.classList.add("card-playlist"); // Aggiungi una classe per lo styling
-            card.innerHTML = `
-            
+            card.innerHTML = 
+            `
                 <img src="${singolaRaccolta.picture_medium}" alt="Immagine di copertina della raccolta ${singolaRaccolta.title}">
                 <p>${singolaRaccolta.title}</p>
               
             `;
+            countCard += 1
+            console.log(countCard);
+            
+
             containerRaccoltePersonalizzate.appendChild(containerCardPlaylist);
             containerCardPlaylist.appendChild(card);
         });
     }
 
+    function renderizzaContenutiRaccolteConsigliate(playlist) {
+        const containerRaccolteConsigliate = document.getElementById("containerRaccolteConsigliate");
+        const containerCardPlaylistConsigliate = document.createElement("div")
+        containerCardPlaylistConsigliate.classList.add("container-card-playlist-consigliate")
+        let countCard = 0
+        playlist.forEach(singolaRaccolta => {
+            if (countCard > 4) {
+                return
+            }
+            const card = document.createElement("div")
+            card.classList.add("card-playlist-consigliate")
+            card.innerHTML =
+            `
+                    <img src="${singolaRaccolta.picture_medium}" alt="Immagine di copertina della plylist consigliata">
+                    <p>${singolaRaccolta.title}</p>
+                    <p>Descrizione della Playlist</p>
+            `
+            countCard += 1
+            
+            containerRaccolteConsigliate.appendChild(containerCardPlaylistConsigliate)
+            containerCardPlaylistConsigliate.appendChild(card)
+        });
+    }
+
+
+
     contenutiCarosello();
-    contenutiRaccoltePersonalizzate();
+    fetchPlaylist();
 });
