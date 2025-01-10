@@ -29,9 +29,14 @@ body, html, p, h1, h2, h3, h4 {
 }
 
 body {
-    display: flex;
     font-family: "Outfit", serif;
 }
+
+.container-contenuti {
+    display: flex;
+    grid-template-columns: 15% auto 10%;
+}
+
 /*MENU LATERALE SINISTRA*/
 aside {
     display: flex;
@@ -40,13 +45,10 @@ aside {
     background-color: #000000;
     color: #b2b2b2;
     width: 15%;
-    position: fixed;
-    height: 100%;
-    left: 0;
-}
-
-main {
-    margin-left: 354px;
+    position: sticky; /* Cambiato da fixed a sticky */
+    top: 0; /* Resta fisso rispetto alla viewport */
+    overflow-y: scroll;
+    height: 100%; /* Assicura che occupi tutta l'altezza */
 }
 
 .container-menu-navigazione-aside {
@@ -72,8 +74,19 @@ main {
 }
 
 .linea-divisore {
-    margin: 35px 0;
+    margin: 20px 0;
     border-bottom: 1px solid #b2b2b2;
+}
+
+#containerPlaylistPersonali {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#containerPlaylistPersonali p {
+    font-size: 0.9em;
 }
 /*MENU LATERALE SINISTRA*/
 /*MENU LATERALE SINISTRA*/
@@ -91,6 +104,11 @@ main {
     width: 65%;
     padding: 10px 35px;
     z-index: 10;
+    position: fixed; /* Fissa il main nella viewport */
+    top: 0;
+    left: 18.6%; /* Lascia spazio per l'aside sinistro */
+    overflow-y: auto;
+    height: 100%;
 }
 
 /*ACCOUNT _ PROFILO*/
@@ -138,6 +156,7 @@ main {
     padding: 10px;
     margin-top: 10px;
     gap: 20px;
+    width: 1195px;
 }
 
 .container-img-carosello-main {
@@ -213,7 +232,7 @@ main {
     color: white;
     gap: 20px;
     margin-top: 50px;
-    
+    width: 1195px;
 }
 
 #containerRaccoltePersonalizzate h3 {
@@ -223,14 +242,14 @@ main {
 .container-card-playlist {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 25px;
 }
 
 .card-playlist {
     display: flex;
     align-items: center;
-    gap: 15px;
-    width: 370px;
+    gap: 17px;
+    width: 380px;
     background-color: #2d2d2d;
     border-radius: 5pt;
     cursor: pointer;
@@ -280,7 +299,7 @@ main {
 .card-playlist-consigliate {
     display: flex;
     flex-direction: column;
-    width: 190px;
+    width: 200px;
     padding: 10px;
     gap: 10px;
     background-color: #2d2d2d;
@@ -289,7 +308,7 @@ main {
 }
 
 .card-playlist-consigliate img {
-    width: 190px;
+    width: 200px;
     border-radius: 5pt;
 }
 
@@ -304,12 +323,18 @@ main {
 
 /*ASIDE SINISTRA _ ASIDE SINISTRA*/
 
-.aside-sinistra {
+.aside-destra {
     padding: 35px 35px;
     background-color: #000000;
     color: #b2b2b2;
-    width: 10%;
-    position: fixed;
-    height: 100%;
-    right: 0;
+    width: 15%; /* Stessa larghezza dell'aside sinistro */
+    height: 100%; /* Assicura che occupi tutta l'altezza */
+    position: relative;
+    overflow-y: scroll; /* Scrollabile indipendentemente */
+    background-color: #000000;
+    color: #b2b2b2;
+    padding: 20px;
 }
+
+/*player*/
+.container-player-bottom 

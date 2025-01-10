@@ -10,69 +10,99 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <aside>
-        <div class="container-menu-navigazione-aside">
-            <div class="container-icone-aside">
-                <ion-icon name="home"></ion-icon>
-                <p>Home</p>
+    <div class="container-contenuti">
+        <aside>
+            <div class="container-menu-navigazione-aside">
+                <div class="container-icone-aside">
+                    <ion-icon name="home"></ion-icon>
+                    <p>Home</p>
+                </div>
+    
+                <div class="container-icone-aside">
+                    <ion-icon name="search"></ion-icon>
+                    <p>Cerca</p>
+                </div>
+    
+                <div class="container-icone-aside">
+                    <ion-icon name="library"></ion-icon>
+                    <p>La tua libreria</p>
+                </div>
+    
+                <div class="container-icone-aside primo-colonna">
+                    <img src="icone/aggiungi.png" alt="Pulsante crea playlist">
+                    <p>Crea playlist</p>
+                </div>
+    
+                <div class="container-icone-aside">
+                    <img src="icone/brani che ti piacciono.png" alt="Pulsante brani che ti piacciono">
+                    <p>Brani che ti piacciono</p>
+                </div>
+    
+                <div class="container-icone-aside">
+                    <img src="icone/i tuoi episodi.png" alt="Pulsante i tuoi episodi">
+                    <p>I tuoi episodi</p>
+                </div>
             </div>
-
-            <div class="container-icone-aside">
-                <ion-icon name="search"></ion-icon>
-                <p>Cerca</p>
+            <div class="linea-divisore"></div>
+    
+            <div id="containerPlaylistPersonali"></div>
+        </aside>
+    
+        <main>
+            <div class="container-account">
+                <div class="container-foto-profilo">
+                    <ion-icon name="person"></ion-icon>
+                </div>
+                <p id="nomeAccount">Nome Account</p>
+                <ion-icon name="caret-down"></ion-icon>
             </div>
-
-            <div class="container-icone-aside">
-                <ion-icon name="library"></ion-icon>
-                <p>La tua libreria</p>
-            </div>
-
-            <div class="container-icone-aside primo-colonna">
-                <img src="icone/aggiungi.png" alt="Pulsante crea playlist">
-                <p>Crea playlist</p>
-            </div>
-
-            <div class="container-icone-aside">
-                <img src="icone/brani che ti piacciono.png" alt="Pulsante brani che ti piacciono">
-                <p>Brani che ti piacciono</p>
-            </div>
-
-            <div class="container-icone-aside">
-                <img src="icone/i tuoi episodi.png" alt="Pulsante i tuoi episodi">
-                <p>I tuoi episodi</p>
-            </div>
-        </div>
-        <div class="linea-divisore"></div>
-    </aside>
-
-    <main>
-        <div class="container-account">
-            <div class="container-foto-profilo">
-                <ion-icon name="person"></ion-icon>
-            </div>
-            <p id="nomeAccount">Nome Account</p>
-            <ion-icon name="caret-down"></ion-icon>
-        </div>
-
-        <div id="containerCaroselloHomePage">
-        
-        </div>
-
-        <div id="containerRaccoltePersonalizzate">
+    
+            <div id="containerCaroselloHomePage">
             
+            </div>
+    
+            <div id="containerRaccoltePersonalizzate">
+                
+            </div>
+    
+            <div id="containerRaccolteConsigliate">
+                <div class="container-header-raccolte-consigliate">
+                    <h3>Altro di ciò che ti piace</h3>
+                    <p id="btnVisualizzaTutto">Visualizza tutto</p>
+                </div>
+            </div>
+        </main>
+        
+        
+        <section class="aside-destra">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, velit tempore unde provident aut dolores illum non exercitationem harum labore iusto quidem atque corrupti odit! Nostrum harum cupiditate quaerat obcaecati.</p>
+        </section>
+    </div>
+
+    <section class="container-player-bottom">
+        <div class="container-brano-player">
+            <img id="imgBranoPlayer" src="" alt="">
+            <div class="container-dati-brano-player">
+                <p id="nomeBranoPlayer"></p>
+                <p id="artistaBranoPlayer"></p>
+            </div>
+            <ion-icon name="heart"></ion-icon>
         </div>
 
-        <div id="containerRaccolteConsigliate">
-            <div class="container-header-raccolte-consigliate">
-                <h3>Altro di ciò che ti piace</h3>
-                <p id="btnVisualizzaTutto">Visualizza tutto</p>
+        <div class="container-player">
+            <div class="pulsanti-player">
+                <ion-icon name="shuffle"></ion-icon>
+                <ion-icon name="play-skip-back"></ion-icon>
+                <ion-icon name="play-circle"></ion-icon>
+                <ion-icon name="play-skip-forward"></ion-icon>
+                <ion-icon name="play-skip-forward"></ion-icon>
+            </div>
+            <div class="container-timeline-player">
+                <p id="partitaDa"></p>
+                <div class="timeline"></div>
+                <p id="manca"></p>
             </div>
         </div>
-    </main>
-    
-    
-    <section class="aside-sinistra">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, velit tempore unde provident aut dolores illum non exercitationem harum labore iusto quidem atque corrupti odit! Nostrum harum cupiditate quaerat obcaecati.</p>
     </section>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

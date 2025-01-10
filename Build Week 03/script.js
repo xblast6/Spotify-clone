@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function fetchPlaylist() {
-        const urlPlaylist = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/playlists";
+        const urlPlaylist = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/playlists?limit=50";
         fetch(urlPlaylist)
             .then((res) => res.json())
             .then((jsonData) => {
@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(playlist);
                 renderizzaContenutiRaccoltePersonalizzate(playlist);
                 renderizzaContenutiRaccolteConsigliate(playlist)
+                renderizzaTitoliPlaylistPersonali(playlist)
             })
             .catch((err) => console.log("Errore nel fetch playlist:", err));
     }
@@ -116,6 +117,15 @@ document.addEventListener("DOMContentLoaded", () => {
             
             containerRaccolteConsigliate.appendChild(containerCardPlaylistConsigliate)
             containerCardPlaylistConsigliate.appendChild(card)
+        });
+    }
+
+    function renderizzaTitoliPlaylistPersonali(playlist) {
+        const containerPlaylistPersonali = document.getElementById("containerPlaylistPersonali")
+        playlist.forEach(singolaRaccolta => {
+            const titoloPlaylist = document.createElement("p")
+            titoloPlaylist.innerText = `${singolaRaccolta.title}`
+            containerPlaylistPersonali.appendChild(titoloPlaylist)
         });
     }
 
