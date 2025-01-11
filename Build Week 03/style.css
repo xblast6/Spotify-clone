@@ -30,6 +30,7 @@ body, html, p, h1, h2, h3, h4 {
 
 body {
     font-family: "Outfit", serif;
+    overflow-x: hidden;
 }
 
 .container-contenuti {
@@ -49,6 +50,7 @@ aside {
     top: 0; /* Resta fisso rispetto alla viewport */
     overflow-y: scroll;
     height: 100%; /* Assicura che occupi tutta l'altezza */
+    margin-bottom: 50px;
 }
 
 .container-menu-navigazione-aside {
@@ -109,6 +111,7 @@ main {
     left: 18.6%; /* Lascia spazio per l'aside sinistro */
     overflow-y: auto;
     height: 100%;
+    
 }
 
 /*ACCOUNT _ PROFILO*/
@@ -270,6 +273,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 100px;
 }
 
 .container-header-raccolte-consigliate { 
@@ -305,6 +309,7 @@ main {
     background-color: #2d2d2d;
     border-radius: 10pt;
     cursor: pointer;
+    
 }
 
 .card-playlist-consigliate img {
@@ -337,7 +342,11 @@ main {
     padding: 20px;
 }
 
-/*player*/
+
+
+/*PLAYER*/
+/*PLAYER*/
+/*PLAYER*/
 .container-player-bottom {
     z-index: 15;
     position: fixed;
@@ -345,9 +354,125 @@ main {
     height: 10vh;
     width: 100vw;
     background-color: #181818;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.container-brano-player {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+}
 
+.container-brano-player img {
+    object-fit: cover ;
+    height: 10vh;
+}
+
+.container-dati-brano-player {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nome-brano-player {
+    color: white;
+    font-size: 1em;
+}
+
+.artista-brano-player {
+    font-size: 0.9em;
+    color: #b2b2b2;
+}
+
+.container-brano-player ion-icon {
+    font-size: 1.2em;
+}
+
+.container-player  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.pulsanti-player {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.container-shuffle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.container-shuffle ion-icon {
+    font-size: 1.5em;
+}
+
+.container-shuffle p{
+    display: none;
+}
+
+.container-azioni-player {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avanti-indietro {
+    font-size: 1.3em;
+    color: #bababa;
+}
+
+.btn-play-player {
+    font-size: 3em;
+}
+
+.container-timeline-player {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.durata {
+    font-size: 0.9em;
+}
+
+.timeline {
+    background-color: #b2b2b2;
+    height: 0.3em;
+    width: 30vw;
+    border-radius: 2pt;
+}
+
+.nero-timeline {
+    background-color: white;
+    height: 0.3em;
+    width: 13vw;
+    border-radius: 2pt;
+}
+
+.container-icone-dx-player {
+    color: #b2b2b2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 25px;
+    font-size: 1.2em;
+}
+/*PLAYER*/
+/*PLAYER*/
+/*PLAYER*/
+
+/*SCROLL BAR*/
+/*SCROLL BAR*/
 /*SCROLL BAR*/
 /* Riduci la dimensione e modifica lo stile delle scrollbar */
 aside, main, .aside-destra {
@@ -356,22 +481,130 @@ aside, main, .aside-destra {
 }
 
 aside::-webkit-scrollbar,
-main::-webkit-scrollbar {
+main::-webkit-scrollbar,
+.aside-destra::-webkit-scrollbar {
     width: 6px; /* Larghezza della scrollbar */
 }
 
 aside::-webkit-scrollbar-thumb,
-main::-webkit-scrollbar-thumb {
+main::-webkit-scrollbar-thumb,
+.aside-destra::-webkit-scrollbar {
     background-color: #888; /* Colore della barra di scorrimento */
     border-radius: 10px; /* Angoli arrotondati */
 }
 
 aside::-webkit-scrollbar-thumb:hover,
-main::-webkit-scrollbar-thumb:hover {
+main::-webkit-scrollbar-thumb:hover,
+.aside-destra::-webkit-scrollbar:hover {
     background-color: #555; /* Colore al passaggio del mouse */
 }
 
 aside::-webkit-scrollbar-track,
 main::-webkit-scrollbar-track {
     background: transparent; /* Sfondo trasparente */
+}
+/*SCROLL BAR*/
+/*SCROLL BAR*/
+/*SCROLL BAR*/
+
+
+
+
+/*RANGE - RANGE*/
+/*RANGE - RANGE*/
+/*RANGE - RANGE*/
+/* Stile generale per il range */
+input[type="range"] {
+    -webkit-appearance: none; /* Rimuove lo stile predefinito */
+    width: 100px; /* Larghezza della barra */
+    height: 8px; /* Altezza della barra */
+    background: white; /* Colore della barra */
+    border-radius: 5px; /* Angoli arrotondati */
+    outline: none; /* Rimuove il bordo */
+    opacity: 0.9; /* Leggera trasparenza */
+    transition: opacity 0.3s;
+    
+}
+
+/* Cambia colore al passaggio del mouse */
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+/* Personalizzazione del "track" (la barra) per Webkit (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: white;    
+    height: 8px;
+    border-radius: 5px;
+}
+
+/* Personalizzazione del "thumb" (il cursore) per Webkit */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Rimuove lo stile predefinito */
+    width: 8px;
+    height: 8px;
+    border: 1px solid white;
+    background: #000000; /* Colore del cursore */
+    border-radius: 50%; /* Forma circolare */
+    cursor: pointer; /* Cambia il cursore a mano */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Ombra */
+    transition: transform 0.3s ease;
+    
+    
+}
+
+/* Effetto "click" sul cursore */
+input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.2); /* Ingrandisce il cursore */
+}
+
+/* Per Firefox */
+input[type="range"]::-moz-range-track {
+    background: white;
+    height: 8px;
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 8px;
+    height: 8px;
+    border: 1px solid white;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    margin-top: -6px;
+    display: none;
+}
+
+input[type="range"]::-moz-range-thumb:active {
+    transform: scale(1.2);
+}
+
+/* Per Internet Explorer */
+input[type="range"]::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    border-width: 8px 0;
+    color: transparent;
+    height: 8px;
+    width: 100%;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 8px;
+    height: 8px;
+    border: 1px solid white;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    margin-top: -6px;
+    display: none;
+}
+
+input[type="range"]::-ms-thumb:active {
+    transform: scale(1.2);
 }
